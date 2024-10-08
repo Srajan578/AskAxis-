@@ -42,17 +42,17 @@ const collegeDetails = {
     },
     "hey": {
         "response": "Hey there! How can I assist you today?",
-        "keywords": [],
+        "keywords": ["hey"],
         "priority": 1
     },
     "hii": {
         "response": "Hello! How can I help you?",
-        "keywords": [],
+        "keywords": ["hii"],
         "priority": 1
     },
     "hello": {
         "response": "Hi! What would you like to know?",
-        "keywords": [],
+        "keywords": ["hello"],
         "priority": 1
     },
     "faculties": {
@@ -117,7 +117,7 @@ const collegeDetails = {
     },
     "bye": {
         "response": "Goodbye! Have a great day!",
-        "keywords": [],
+        "keywords": ["bye"],
         "priority": 1
     },
     "thanks": {
@@ -127,12 +127,12 @@ const collegeDetails = {
     },
     "thank you": {
         "response": "No problem! I'm here to help.",
-        "keywords": [],
+        "keywords": ["thank", "thanks", "you", "u", "thanku"],
         "priority": 1
     },
     "how are you": {
         "response": "I'm just a chatbot, but I'm here to assist you! How can I help you today?",
-        "keywords": [],
+        "keywords": ["how are you"],
         "priority": 1
     }
 };
