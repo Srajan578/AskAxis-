@@ -43,17 +43,17 @@ const collegeDetails = {
     "hey": {
         "response": "Hey there! How can I assist you today?",
         "keywords": [],
-        "priority": 0
+        "priority": 1
     },
     "hii": {
         "response": "Hello! How can I help you?",
         "keywords": [],
-        "priority": 0
+        "priority": 1
     },
     "hello": {
         "response": "Hi! What would you like to know?",
         "keywords": [],
-        "priority": 0
+        "priority": 1
     },
     "faculties": {
         "response": "Axis College has a dedicated team of experienced faculty members across all departments.",
@@ -118,22 +118,22 @@ const collegeDetails = {
     "bye": {
         "response": "Goodbye! Have a great day!",
         "keywords": [],
-        "priority": 0
+        "priority": 1
     },
     "thanks": {
         "response": "You're welcome! If you have more questions, feel free to ask.",
         "keywords": [],
-        "priority": 0
+        "priority": 1
     },
     "thank you": {
         "response": "No problem! I'm here to help.",
         "keywords": [],
-        "priority": 0
+        "priority": 1
     },
     "how are you": {
         "response": "I'm just a chatbot, but I'm here to assist you! How can I help you today?",
         "keywords": [],
-        "priority": 0
+        "priority": 1
     }
 };
 
