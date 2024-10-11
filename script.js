@@ -167,9 +167,9 @@ const collegeDetails = {
     "keywords": ["entrance exam", "entrance"],
     "priority": 22
 },
-"branches": {
+"branch": {
     "response": "The college offers branches like Computer Science, Electronics, Mechanical, Civil, and Information Technology.",
-    "keywords": ["B.Tech branches", "branches available", "branches"],
+    "keywords": ["branches in btech", "branches available", "branches", "branch"],
     "priority": 23
 },
 "fees": {
