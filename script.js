@@ -12,7 +12,7 @@ const collegeDetails = {
 },
 "courses": {
     "response": "B.Tech, M.Tech, BBA, MBA, BCA, MCA, etc.",
-    "keywords": ["courses", "subjects"],
+    "keywords": ["courses"],
     "priority": 3
 },
 "admission": {
@@ -22,7 +22,7 @@ const collegeDetails = {
 },
 "placements": {
     "response": "Axis College has an excellent placement record with top companies like Infosys, TCS, and Wipro visiting the campus for recruitment.",
-    "keywords": ["placements", "jobs", "recruitment"],
+    "keywords": ["placements", "jobs", "job"],
     "priority": 5
 },
 "hostel": {
@@ -34,11 +34,6 @@ const collegeDetails = {
     "response": "The college conducts various cultural and technical events throughout the year, such as Tech Fest and Cultural Fest.",
     "keywords": ["events", "fests"],
     "priority": 7
-},
-"srajan": {
-    "response": "Srajan ke friends Roshni, Shivangi, Siddhant, Vishakha, Sona, Arihant hai.",
-    "keywords": ["friends", "srajan"],
-    "priority": 8
 },
 "hey": {
     "response": "Hey there! How can I assist you today?",
@@ -87,7 +82,7 @@ const collegeDetails = {
 },
 "shubha": {
     "response": "Shubha Mam is the HOD of B.Tech 2nd Year.",
-    "keywords": ["shubha", "hod"],
+    "keywords": ["shubha", "hod", "2nd year", "hod of 2nd year"],
     "priority": 10
 },
 "ashish": {
@@ -100,7 +95,7 @@ const collegeDetails = {
     "keywords": ["shail", "operating", "system"],
     "priority": 10
 },
-"axis": {
+"fees": {
     "response": "The fee structure varies by course. You can find detailed information on the college's official website: https://axiscolleges.org/.",
     "keywords": ["fee", "structure"],
     "priority": 1
@@ -137,69 +132,54 @@ const collegeDetails = {
 },
 
 // New entries
-"faculty_student_ratio": {
-    "response": "The faculty-student ratio is typically 1:60.",
-    "keywords": ["faculty-student ratio", "ratio"],
-    "priority": 13
-},
-"faculty_experience": {
+"experience": {
     "response": "Yes, most faculty members hold advanced degrees and have industry experience.",
-    "keywords": ["experienced faculty", "faculty members", "faculty experience"],
+    "keywords": ["experience", "faculty members", "faculty experience"],
     "priority": 14
 },
-"canteen_prices": {
+"canteen prices": {
     "response": "Canteen prices are affordable, with meals ranging from $1 to $4.",
-    "keywords": ["canteen prices", "food prices"],
+    "keywords": ["canteen prices", "food prices", "canteen", "prices"],
     "priority": 15
 },
-"canteen_variety": {
-    "response": "Yes, the canteen offers a range of options, including vegetarian and non-vegetarian meals.",
-    "keywords": ["canteen variety", "food options"],
-    "priority": 16
-},
-"campus_environment": {
+"environment": {
     "response": "The campus is green and well-maintained, promoting a conducive learning atmosphere.",
-    "keywords": ["campus environment", "learning atmosphere"],
+    "keywords": ["environment", "atmosphere"],
     "priority": 17
 },
-"outdoor_study_places": {
-    "response": "Yes, there are several lawns for outdoor studying.",
-    "keywords": ["outdoor study", "study places"],
-    "priority": 18
-},
-"training_programs": {
+"training": {
     "response": "The college offers workshops, internships, and skill development programs relevant to various fields.",
     "keywords": ["training programs", "workshops"],
     "priority": 19
 },
-"regular_seminars": {
+"seminars": {
     "response": "Yes, seminars featuring industry experts are held regularly to enhance learning.",
-    "keywords": ["regular seminars", "industry experts"],
+    "keywords": ["regular seminars", "industry experts", "seminars", "seminar"],
     "priority": 20
 },
-"btech eligibility": {
+"btech": {
     "response": "Candidates must have completed 10+2 with a minimum of 50% in Physics, Chemistry, and Mathematics.",
     "keywords": ["eligibility", "eligibility criteria"],
     "priority": 21
 },
-"entrance_exam": {
+"entrance": {
     "response": "No, there is no entrance exam required.",
-    "keywords": ["entrance exam", "admission process"],
+    "keywords": ["entrance exam", "entrance"],
     "priority": 22
 },
-"btech_branches": {
+"branches": {
     "response": "The college offers branches like Computer Science, Electronics, Mechanical, Civil, and Information Technology.",
-    "keywords": ["B.Tech branches", "branches available"],
+    "keywords": ["B.Tech branches", "branches available", "branches"],
     "priority": 23
 },
-"btech_fees": {
-    "response": "The fees range from ₹1 lakh to ₹1 lakh 10,000 per year, depending on the branch.",
-    "keywords": ["B.Tech fees", "fees structure"],
+"fees": {
+    "response": "The fees range from ₹75,000 to ₹1 lakh per year, depending on the branch.",
+    "keywords": ["B.Tech fees", "fees structure", "btech ki fees", "fees of btech", "btech"],
     "priority": 24
 },
 "scholarships": {
     "response": "No, there are currently no scholarships available.",
-    "keywords": ["scholarships", "financial aid"],
+    "keywords": ["scholarships", "financial aid", "scholarship"],
     "priority": 25
 }
 
