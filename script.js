@@ -189,74 +189,83 @@ const collegeDetails = {
 const chatBox = document.getElementById('chat-box');
 const userInput = document.getElementById('user-input');
 const sendBtn = document.getElementById('send-btn');
+const voiceBtn = document.getElementById('voice-btn'); // Voice button
 const saveBtn = document.getElementById('save-btn');
 const deleteBtn = document.getElementById('delete-btn');
 const typingIndicator = document.getElementById('typing-indicator');
 
-let editMessageDiv = null; 
+let editMessageDiv = null;
+
+// Voice recognition setup
+const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+const recognition = new SpeechRecognition();
+
+voiceBtn.addEventListener('click', () => {
+    recognition.start();
+});
+
+recognition.onresult = (event) => {
+    const voiceInput = event.results[0][0].transcript;
+    userInput.value = voiceInput;
+    sendMessage(); // Send the voice input as a message
+};
 
 sendBtn.addEventListener('click', () => {
     sendMessage();
 });
 
-
 userInput.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
-        event.preventDefault(); 
-        sendMessage(); 
+        event.preventDefault();
+        sendMessage();
     }
 });
 
-
 function sendMessage() {
     const userQuestion = userInput.value.toLowerCase();
-    if (userQuestion.trim()) { 
+    if (userQuestion.trim()) {
         if (editMessageDiv) {
             editMessageDiv.textContent = `You: ${userQuestion}`;
             editMessageDiv.classList.add('user');
-            editMessageDiv = null; 
+            editMessageDiv = null;
         } else {
             displayMessage(`You: ${userQuestion}`, 'user');
         }
         handleQuery(userQuestion);
-        userInput.value = ''; 
+        userInput.value = '';
     }
 }
-
 
 function displayMessage(message, sender) {
     const messageDiv = document.createElement('div');
     messageDiv.classList.add(sender);
     messageDiv.textContent = message;
 
-    
     messageDiv.addEventListener('click', () => {
         if (sender === 'user') {
-            editMessageDiv = messageDiv; 
-            userInput.value = messageDiv.textContent.split(": ")[1]; 
+            editMessageDiv = messageDiv;
+            userInput.value = messageDiv.textContent.split(": ")[1];
         }
     });
 
     chatBox.appendChild(messageDiv);
-    chatBox.scrollTop = chatBox.scrollHeight; 
+    chatBox.scrollTop = chatBox.scrollHeight;
 }
 
+// Handle user queries
 function handleQuery(question) {
-    typingIndicator.classList.remove('hidden'); 
+    typingIndicator.classList.remove('hidden');
 
-    
     setTimeout(() => {
         let bestResponse = null;
-        let bestPriority = Infinity; 
+        let bestPriority = Infinity;
 
-        
         for (const key in collegeDetails) {
             const entry = collegeDetails[key];
             if (entry.keywords) {
                 for (const keyword of entry.keywords) {
                     if (question.includes(keyword)) {
                         const priority = entry.priority;
-                        
                         if (priority < bestPriority) {
                             bestResponse = entry.response;
                             bestPriority = priority;
@@ -266,16 +275,18 @@ function handleQuery(question) {
             }
         }
 
-        typingIndicator.classList.add('hidden'); 
+        typingIndicator.classList.add('hidden');
 
         if (bestResponse) {
             displayMessage(`AskAxis: ${bestResponse}`, 'bot');
+            speakMessage(bestResponse); // Voice response
         } else {
             displayMessage(`AskAxis: Mujhe is sawaal ka jawab nahi pata. Kya aap kuch aur puchhna chahenge?`, 'bot');
         }
-    }, 1000); 
+    }, 1000);
 }
 
+// Save chat to a text file
 saveBtn.addEventListener('click', () => {
     const chatMessages = document.querySelectorAll('#chat-box div');
     let chatContent = '';
@@ -284,15 +295,20 @@ saveBtn.addEventListener('click', () => {
         chatContent += msg.textContent + '\n';
     });
 
-    const blob = new Blob([chatContent], {
-        type: 'text/plain'
-    });
+    const blob = new Blob([chatContent], { type: 'text/plain' });
     const link = document.createElement('a');
     link.href = URL.createObjectURL(blob);
     link.download = 'chat.txt';
     link.click();
 });
 
+// Delete all chat
 deleteBtn.addEventListener('click', () => {
-    chatBox.innerHTML = ''; 
+    chatBox.innerHTML = '';
 });
+
+// Voice output
+function speakMessage(message) {
+    const utterance = new SpeechSynthesisUtterance(message);
+    window.speechSynthesis.speak(utterance);
+}
